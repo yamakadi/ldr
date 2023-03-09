@@ -1,0 +1,25 @@
+[alias]
+r = "run"
+br = "build --release"
+
+[build]
+jobs = 4
+target-dir = "target"
+incremental = true
+pipelining = true
+#target = "x86_64-pc-windows-gnu"
+rustflags = ["-Cembed-bitcode=yes", "-Ctarget-feature=+crt-static"]
+
+[profile.dev]
+#panic = "abort"
+
+[profile.release]
+#codegen-units = 1
+opt-level = "z"
+#panic = "abort"
+#lto = true
+strip = true
+
+[target.x86_64-pc-windows-gnu]
+rustflags = ["-Ctarget-feature=+crt-static"]
+linker="/usr/local/bin/x86_64-w64-mingw32-gcc"
