@@ -22,4 +22,4 @@ strip = true
 
 [target.x86_64-pc-windows-gnu]
 rustflags = ["-Ctarget-feature=+crt-static"]
-linker="/usr/local/bin/x86_64-w64-mingw32-gcc"
+#linker="/usr/local/bin/x86_64-w64-mingw32-gcc"
